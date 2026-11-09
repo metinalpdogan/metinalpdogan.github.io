@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metin Alp Dogan</title>
+<meta name="description" content="Metin Alp Dogan is a Ph.D. student in Computer Science at UCLA working on robot learning, human-in-the-loop learning, and safe and reliable embodied AI.">
+<meta name="author" content="Metin Alp Dogan">
+<link rel="canonical" href="https://metinalpdogan.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metin Alp Dogan">
+<meta property="og:description" content="Ph.D. student at UCLA working on robot learning.">
+<meta property="og:url" content="https://metinalpdogan.com/">
+<meta property="og:image" content="https://metinalpdogan.com/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t); } catch (e) {}
+    if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('motion', 'intro');
+      // every visit starts from x_T, so don't restore an old scroll position
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    }
+  })();
+</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#page">Skip the noise</a>
+
+<!-- x_T ~ N(0, I). Scrolling through the runway below walks t from 1000 to 0. -->
+<canvas id="noise" aria-hidden="true"></canvas>
+<button id="hud" type="button" aria-label="Reveal the page">
+  <span class="hud-line" aria-hidden="true">x<sub>0</sub> ~ p<sub>θ</sub>(x | “metin alp dogan”)</span>
+  <span class="hud-line" aria-hidden="true">t = <span id="hud-t">1000</span><span class="hud-gap"></span>σ = <span id="hud-s">1.000</span></span>
+  <span class="hud-cta" aria-hidden="true">scroll to denoise <span class="hud-arrow">↓</span></span>
+</button>
+<div id="runway" aria-hidden="true"></div>
+<div id="renoise" aria-hidden="true"><span class="renoise-label">keep scrolling ↑ to return to noise</span><span class="renoise-bar"><i></i></span></div>
+
+<div class="page" id="page">
+
+  <header class="nav">
+    <a class="brand" href="#page">metin alp dogan</a>
+    <nav aria-label="Sections">
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="assets/MetinAlp_Dogan_CV.pdf">CV</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-label="About">
+      <div class="hero-text">
+        <p class="kicker">Robot learning · Human-in-the-loop learning · Reliable embodied AI</p>
+        <h1>Metin Alp Dogan</h1>
+        <p class="lede">I'm a first-year Ph.D. student in Computer Science at <a href="https://www.ucla.edu/">UCLA</a>, where I'm fortunate to be advised by <a href="https://yuchencui.cc/">Prof. Yuchen Cui</a> in the Robot Intelligence Lab. My research interests lie at the intersection of <b>robot learning, human-in-the-loop learning, and safe and reliable embodied AI</b>. I'm particularly interested in developing robot policies that can learn from human feedback, be interpretable and steerable, and operate reliably under real-world uncertainty.</p>
+        <p>I was selected as a <b>Fulbright Scholar</b> by the Fulbright Commission and subsequently completed my M.S. in Electrical and Computer Engineering at UCLA. Before joining UCLA, I was a research intern at the Max Planck Institute for Intelligent Systems, where I worked with Prof. Metin Sitti on untethered magnetic milli-robots for biomedical applications. My research experiences have spanned both the physical design and control of robotic systems and the development of learning-based approaches to robot intelligence, shaping my interest in building robots that are not only capable, but also reliable and trustworthy.</p>
+        <ul class="links">
+          <li><a href="mailto:metinalp@ucla.edu">Email</a></li>
+          <li><a href="assets/MetinAlp_Dogan_CV.pdf">CV</a></li>
+          <li><a href="https://www.linkedin.com/in/metinalpdogan/">LinkedIn</a></li>
+          <!-- Add when ready:
+          <li><a href="https://scholar.google.com/citations?user=XXXX">Scholar</a></li>
+          <li><a href="https://github.com/XXXX">GitHub</a></li>
+          -->
+        </ul>
+      </div>
+
+      <figure class="portrait" id="portrait">
+        <button class="portrait-frame" type="button" aria-label="Resample the portrait from noise">
+          <img src="assets/img/profile.jpg" alt="Metin Alp Dogan" width="640" height="640">
+          <canvas aria-hidden="true"></canvas>
+        </button>
+        <figcaption data-noscramble><span id="ptag">x<sub>0</sub> · t = 0</span><span class="hint">click to resample</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="education" class="block block-first" aria-labelledby="edu-h">
+      <h2 class="section-h" id="edu-h">Education</h2>
+      <ul class="edu">
+        <li>
+          <span class="edu-what">Ph.D. in Computer Science, <b>University of California, Los Angeles</b><span class="edu-note">Departmental Fellowship</span></span>
+          <span class="edu-when">2026 – present</span>
+        </li>
+        <li>
+          <span class="edu-what">M.S. in Electrical &amp; Computer Engineering, <b>University of California, Los Angeles</b><span class="edu-note">GPA 4.0/4.0 · Fulbright Scholar</span></span>
+          <span class="edu-when">2024 – 2026</span>
+        </li>
+        <li>
+          <span class="edu-what">B.S. in Electrical &amp; Electronics Engineering, <b>Boğaziçi University</b><span class="edu-note">Top 10% of class</span></span>
+          <span class="edu-when">2020 – 2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="news" class="block" aria-labelledby="news-h">
+      <h2 class="section-h" id="news-h">News</h2>
+      <ul class="news">
+        <li><span class="date">Nov 2026</span><span><a href="#visible-touch">Visible Touch</a> and <a href="#meta-ctrl">Meta-Ctrl</a> are both <b>Spotlights</b> at CoRL 2026.</span></li>
+        <li><span class="date">Sep 2026</span><span>Started my Ph.D. in Computer Science at UCLA with a Departmental Fellowship.</span></li>
+        <li><span class="date">Jun 2026</span><span>Finished my M.S. in ECE at UCLA.</span></li>
+        <li><span class="date">Sep 2024</span><span>Moved to Los Angeles as a Fulbright Scholar and joined the Robot Intelligence Lab.</span></li>
+        <li><span class="date">Jun 2023</span><span>Our pangolin-inspired magnetic robot is out in <i>Nature Communications</i>.</span></li>
+      </ul>
+    </section>
+
+    <section id="publications" class="block" aria-labelledby="pub-h">
+      <div class="section-head">
+        <h2 class="section-h" id="pub-h">Publications</h2>
+        <span class="section-note">newest first · * equal contribution</span>
+      </div>
+
+      <article class="entry featured" id="visible-touch">
+        <a class="thumb" href="https://visibletouch.github.io/" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/visible-touch.jpg" alt="" width="480" height="360" loading="lazy">
+        </a>
+        <div class="entry-body">
+          <h3><a href="https://visibletouch.github.io/">Visible Touch: Rendering Contact for Visuomotor Policies</a></h3>
+          <p class="authors"><b>Metin Alp Dogan*</b>, Edward Sun*, Feng Xu*, Daniel Wu, Allen Peng, Dennis Hong, Yuchen Cui</p>
+          <p class="venue"><span class="badge">Spotlight</span>Conference on Robot Learning (CoRL) 2026</p>
+          <p class="tldr">Draw contact as arrows on the camera image and any image-conditioned policy, pretrained VLAs included, can use touch with no architecture change: +15.7 pp on LIBERO, +30 pp for π0.5 on real contact-rich tasks, with a sub-$50 open-source sensor.</p>
+          <p class="actions"><a href="https://visibletouch.github.io/">project</a><a href="https://arxiv.org/abs/2609.14156">arXiv</a><a href="https://github.com/qaz1678249/visibletouch">hardware</a></p>
+        </div>
+      </article>
+
+      <article class="entry featured" id="meta-ctrl">
+        <a class="thumb tile" href="https://metactrlg.github.io" tabindex="-1" aria-hidden="true">
+          <span class="tile-k">constrained decoding memory</span>
+          <span class="tile-big"><s>107&nbsp;TB</s><span class="tile-arrow">→</span>&lt;2&nbsp;GB</span>
+          <span class="tile-k">meta-tokens · exact factorization</span>
+        </a>
+        <div class="entry-body">
+          <h3><a href="https://metactrlg.github.io">Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints</a></h3>
+          <p class="authors">Gwen Yidou-Weng, Edward Sun, Tianyi Ma, <b>Metin Alp Dogan</b>, Benjie Wang, Allen Peng, Guy Van den Broeck, Yuchen Cui</p>
+          <p class="venue"><span class="badge">Spotlight</span>Conference on Robot Learning (CoRL) 2026</p>
+          <p class="tldr">Constrained decoding over meta-tokens guarantees that LLM robot plans satisfy syntax, preconditions, goals and ordering while keeping the LM's plan quality; a small open model reaches the best reported subgoal success on WAH-NL.</p>
+          <p class="actions"><a href="https://metactrlg.github.io">project</a><a href="https://arxiv.org/abs/2608.22149">arXiv</a></p>
+        </div>
+      </article>
+
+      <article class="entry featured" id="pangolin">
+        <a class="thumb" href="https://doi.org/10.1038/s41467-023-38689-x" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/pangolin-robot.jpg" alt="" width="480" height="360" loading="lazy">
+        </a>
+        <div class="entry-body">
+          <h3><a href="https://doi.org/10.1038/s41467-023-38689-x">Pangolin-Inspired Untethered Magnetic Robot for On-Demand Biomedical Heating Applications</a></h3>
+          <p class="authors">Ren Hao Soon*, Zhen Yin*, <b>Metin Alp Dogan</b>, Nihal Olcay Dogan, Mehmet Efe Tiryaki, Alp Can Karacakol, Asli Aydin, Pouria Esmaeili-Dokht, Metin Sitti</p>
+          <p class="venue"><span class="badge badge-outline">Journal</span><i>Nature Communications</i> 14, 3320 · 2023</p>
+          <p class="tldr">A soft magnetic robot with overlapping metal scales, like a pangolin's: it shape-morphs under low-frequency fields and heats above 70 °C from more than 5 cm away under high-frequency fields.</p>
+          <p class="actions"><a href="https://doi.org/10.1038/s41467-023-38689-x">paper</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" class="block" aria-labelledby="proj-h">
+      <div class="section-head">
+        <h2 class="section-h" id="proj-h">Projects</h2>
+      </div>
+
+      <article class="entry" id="conformer-bci">
+        <div class="thumb chart" aria-hidden="true">
+          <svg viewBox="0 0 240 180" role="presentation">
+            <text class="c-title" x="10" y="17">validation PER ↓</text>
+            <g class="c-rows" transform="translate(0,30)">
+              <g transform="translate(0,0)"><text class="c-lab" x="10" y="9">GRU</text><rect class="c-bar" x="82" y="0" width="61.8" height="11"/><text class="c-val" x="148" y="9">.217</text></g>
+              <g transform="translate(0,20)"><text class="c-lab" x="10" y="9">GRU + aug</text><rect class="c-bar" x="82" y="0" width="51.9" height="11"/><text class="c-val" x="138" y="9">.182</text></g>
+              <g transform="translate(0,40)"><text class="c-lab" x="10" y="9">LSTM</text><rect class="c-bar" x="82" y="0" width="66.7" height="11"/><text class="c-val" x="153" y="9">.234</text></g>
+              <g transform="translate(0,60)"><text class="c-lab" x="10" y="9">LSTM + aug</text><rect class="c-bar" x="82" y="0" width="64.1" height="11"/><text class="c-val" x="150" y="9">.225</text></g>
+              <g transform="translate(0,80)"><text class="c-lab" x="10" y="9">Transformer</text><rect class="c-bar" x="82" y="0" width="120.6" height="11"/><text class="c-val" x="207" y="9">.423</text></g>
+              <g transform="translate(0,100)"><text class="c-lab" x="10" y="9">Causal Tr.</text><rect class="c-bar" x="82" y="0" width="63.8" height="11"/><text class="c-val" x="150" y="9">.224</text></g>
+              <g class="c-best" transform="translate(0,120)"><text class="c-lab" x="10" y="9">Conformer</text><rect class="c-bar" x="82" y="0" width="45.9" height="11"/><text class="c-val" x="132" y="9">.161</text></g>
+            </g>
+          </svg>
+        </div>
+        <div class="entry-body">
+          <h3>Conformer Decoder for Intracortical Speech BCIs</h3>
+          <p class="tldr">Adapted the ASR Conformer to decode phonemes from 256-channel intracortical recordings (Brain-to-Text ’24), adding day-specific input layers, SpecAugment and intermediate CTC. Phoneme error rate 0.161 vs. 0.217 for the GRU baseline, with no language model.</p>
+        </div>
+      </article>
+
+      <article class="entry" id="everest">
+        <div class="thumb" aria-hidden="true">
+          <img src="assets/img/emg-cer-curves.jpg" alt="" width="480" height="360" loading="lazy">
+        </div>
+        <div class="entry-body">
+          <h3>EVEREST: Decoding Keystrokes from Wrist sEMG</h3>
+          <p class="tldr">TDS convolutions for short muscle-activation patterns feeding a three-layer LSTM, plus amplitude scaling and tuned SpecAugment, on Meta’s emg2qwerty. Test character error rate 13.29 vs. 21.91 for the baseline.</p>
+        </div>
+      </article>
+
+      <article class="entry" id="apf">
+        <div class="thumb apf-wrap">
+          <canvas id="apf-field" aria-label="Interactive potential field: move the pointer to place the goal, click to move the start." role="img"></canvas>
+          <span class="thumb-hint" aria-hidden="true">move = goal · click = start</span>
+        </div>
+        <div class="entry-body">
+          <h3>Artificial Potential Function Navigation for a TurtleBot</h3>
+          <p class="tldr">Robot-centric navigation function U = γ<sup>k</sup>/β: an attractive goal term over a product of obstacle barrier terms, with Kinect RGB-D colour segmentation locating the target and obstacles. Its normalized gradient steers the TurtleBot in ROS and Gazebo. The thumbnail runs the same field live.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience" class="block" aria-labelledby="exp-h">
+      <h2 class="section-h" id="exp-h">Experience</h2>
+
+      <div class="row">
+        <div class="when">2024 – now</div>
+        <div class="what">
+          <h3>Robot Intelligence Lab, UCLA <span class="where">Los Angeles</span></h3>
+          <p class="role">Graduate Student Researcher · with Prof. Yuchen Cui</p>
+          <p>Asynchronous inference for diffusion and VLA policies (π0, π0.5): execution-reference anchoring lifts simulated manipulation success from 26.5% to 58.5% under 600 ms latency. Execution-supervised critics for robot program generation (AUROC 0.76 → 0.91). DARPA-funded work with Prof. Guy Van den Broeck on HMMs and Bayesian inference.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2023 – 2024</div>
+        <div class="what">
+          <h3>Automatic Control &amp; Microprocessors Lab, Boğaziçi <span class="where">Istanbul</span></h3>
+          <p class="role">Undergraduate Researcher · with Profs. Kemal Cılız and Mehmet Akar</p>
+          <p>Built a rotary inverted pendulum and compared LQR, full-state feedback and PID on hardware and in Simulink.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2022</div>
+        <div class="what">
+          <h3>Max Planck Institute for Intelligent Systems <span class="where">Stuttgart</span></h3>
+          <p class="role">Research Intern, Physical Intelligence Dept. · with Prof. Metin Sitti</p>
+          <p>Modeled the nonlinear dynamics of magnetically actuated robots to close the sim-to-real gap (→ <i>Nature Communications</i>); 3D tumor segmentation in brain MRI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block misc" aria-label="Teaching and service">
+      <div>
+        <h2 class="section-h">Teaching</h2>
+        <ul class="plain">
+          <li>Graduate Reader, C247A/B Neural Networks &amp; Deep Learning, UCLA</li>
+          <li>Teaching Assistant, EE 450 Control Technology &amp; Design, Boğaziçi</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-h">Service</h2>
+        <ul class="plain">
+          <li>Fulbright Ambassador, UCLA, 2025</li>
+          <li>Graduate Representative, Turkish Student Association at UCLA</li>
+          <li>President, IEEE Student Branch at Boğaziçi, 2021 – 2023</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Metin Alp Dogan · updated Nov 2026</span>
+    <button type="button" id="resample" class="resample">↑ back to noise</button>
+  </footer>
+</div>
+
+</body>
+</html>
