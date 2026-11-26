@@ -271,7 +271,7 @@ a.thumb:hover img { transform: scale(1.03); }
 .pinned .page { position: fixed; top: 0; left: 0; right: 0; }
 
 #hud {
-  position: fixed; left: 50%; bottom: 28px; z-index: 101; transform: translateX(-50%);
+  position: fixed; left: 50%; top: 50%; z-index: 101; transform: translate(-50%, -50%);
   display: none; flex-direction: column; align-items: center;
   font-family: var(--mono); font-size: 12px; line-height: 1.65; color: #f4f2ec;
   text-align: center; white-space: nowrap; cursor: pointer;
@@ -331,7 +331,7 @@ a.thumb:hover img { transform: scale(1.03); }
   .portrait figcaption .hint { display: none; }
   .block-first { padding-top: 36px; }
   .edu li { flex-direction: column; gap: 2px; }
-  #hud { font-size: 11px; bottom: 22px; padding: 9px 14px 8px; }
+  #hud { font-size: 11px; padding: 9px 14px 8px; }
   .entry { grid-template-columns: 1fr; gap: 14px; padding: 16px; margin: 0 -16px 8px; }
   .thumb { max-width: 340px; }
   .news li { grid-template-columns: 1fr; gap: 0; }
